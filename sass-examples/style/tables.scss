@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .table {
     box-sizing: border-box;
     border-collapse: collapse;
@@ -7,7 +9,7 @@
     }
 
     td {
-        border-top: 1px solid #ccc;
+        border-top: 1px solid $light-grey;
     }
 
     th,
@@ -29,7 +31,7 @@
 
 .table-striped {
     tr:nth-of-type(2n) {
-        background-color: #eee;
+        background-color: $almost-white;
     }
 }
 
@@ -57,7 +59,7 @@
         td {
             display: block;
             border: none;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid $almost-white;
             position: relative;
             padding-left: 50%;
             white-space: normal;
