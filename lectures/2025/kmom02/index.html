@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>kmom02 lecture</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js" defer></script>
+</head>
+
+<body>
+    <template id="single-product-template">
+        <style>
+            h1 {
+                color: #444;
+                font-weight: thin;
+            }
+
+            span {
+                font-weight: bold;
+            }
+        </style>
+        <h1><slot name="product-name">INSERT NAME</slot></h1>
+        <p>Lagersaldo: <span><slot name="product-stock">INSERT STOCK</slot></span></p>
+    </template>
+      
+
+
+    <shadow-view data-text="Jag är en jättestor skugga!"></shadow-view>
+    <p class="not-shadow">Jag är ingen skugga!</p>
+
+    <single-product>
+        <h1 slot="product-name">Princesstårta</h1>
+        <span slot="product-stock">1000-tals</span>
+    </single-product>
+
+    <single-product>
+        <h1 slot="product-name">Mandelkubb</h1>
+        <span slot="product-stock">1</span>
+    </single-product>
+
+    <single-product>
+        <h1 slot="product-name">Budapest bakelse</h1>
+        <span slot="product-stock">123</span>
+    </single-product>
+</body>
+
+</html>
