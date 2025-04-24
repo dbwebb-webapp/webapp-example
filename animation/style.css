@@ -10,6 +10,10 @@ body {
     height: 100vh;
 }
 
+body {
+    font-family: sans-serif;
+}
+
 router-outlet {
     display: flex;
     width: 100%;
@@ -21,6 +25,7 @@ detail-component {
     padding: 1rem;
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 list-component {
@@ -45,4 +50,16 @@ detail-component {
 
 .slide-out {
     animation: moveToRight 0.4s ease both;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    padding: 1rem;
+    background-color: #ccc;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-flow: row | nowrap;
+    justify-content: space-around;
 }
