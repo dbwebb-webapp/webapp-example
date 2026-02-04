@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shadow DOM exempel</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script type="module" src="src/main.js" defer></script>
+</head>
+
+<body>
+    <h1>Shadow DOM exempel</h1>
+    <router-outlet></router-outlet>
+    <navigation-outlet></navigation-outlet>
+
+    <!-- Product template -->
+    <template id="product-template">
+        <style>
+            h4 {
+                background: #e31c79;
+                color: white;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            img {
+                width: 20%;
+            }
+
+            .product-description {
+                font-size: 0.8rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .product-description.show {
+                max-height: 2500px;
+            }
+
+            .read {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            /** slot example **/
+            ::slotted([slot="badge"]) {
+                background: red;
+                color: white;
+                padding: 4px 8px;
+                border-radius: 4px;
+            }
+        </style>
+        <slot name="badge"></slot><!-- slot example -->
+        <h4 class="product-name"></h4>
+        <img />
+        <p class="read">Read description...</p>
+        <div class="product-description"></div>
+    </template>
+    <!-- End -->
+</body>
+
+</html>
