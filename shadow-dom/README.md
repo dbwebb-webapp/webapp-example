@@ -115,8 +115,8 @@ Med mode open läcker inte css in i komponenten men följande är möjligt;
 
 ```javascript
 export default class CarComponent extends HTMLElement {
-  constructor() {
-          super(brand, model)
+  constructor(brand, model) {
+          super()
           //mode closed - vi gör en referens
           this._myShadow = this.attachShadow({ mode: 'closed' })
 
