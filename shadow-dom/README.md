@@ -181,14 +181,14 @@ export default class SingleProduct extends HTMLElement {
 >
 > **mode: 'open'**
 > 
-> används i praktiken eftersom det åtminstone ger skydd mot läckage av global css.
+> används i praktiken eftersom det åtminstone ger viss encapsulation.
 >
 > 
 > **mode: 'closed'** 
 > 
 > Används sällan eftersom det försvårar testning och debuggning. 
 > Dessutom ger det ett _falskt_ skydd eftersom det inte är en inbyggd 
-> säkerhetsmekanism - det ger 'en stängd dörr' men referensen går att hitta via prototypen.
+> säkerhetsmekanism (referensen går att hitta via prototypen).
 >
 
 > 
@@ -242,7 +242,7 @@ this.shadowRoot.appendChild(clone);
 
 **summering**
 - passar bra för statiskt strukturerad data, t ex data från API.
-- dock ett **MEN** - om datat är dynamiskt lämpar sig template literals med backticks bättre (som vi tidigare gjort med ``ìnnerHTML```) -> ```this.shadowRoot.innerHTML = `${product.price} ${product.name}` ```
+- dock ett **MEN** - om datat är dynamiskt lämpar sig template literals med backticks bättre (default mode), dvs varken via shadowRoot eller referens; ```this.innerHTML```
 - möjlighet att separera css från komponenten till html-dokumentet
 
 
