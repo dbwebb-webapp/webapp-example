@@ -64,10 +64,10 @@ När man skapar en komponent och lägger till den till DOM-trädet, så skapas d
 
 När man ska lägga till Web components till en sida så har man 2 "modes" som man kan välja.  
 Med dessa modes väljer man vilken typ av inkapsling (encapsulation) man vill ha. Dessa modes är ```open``` eller ```closed```.  
-Om man inte väljer ett mode man blir det ingen inkapsling och exempelvis global CSS påverkar även innehållet i komponenten.
-Man väljer, deklarativt, vilket ```mode``` man vill ha.  
-
-På sätt och vis finns det tre alternativ; open, closed och inget mode alls.
+Om man inte specificerar ett mode man blir det ingen inkapsling och exempelvis global CSS påverkar även innehållet i komponenten.  
+Detta brukar kallas 'default' mode.  
+Man specificerar i koden för komponenten vilket ```mode``` som ska gälla. Nedan visas hur det kan se ut.
+  
 
 ### 1. mode: 'open'
 
@@ -95,6 +95,7 @@ export default class PetComponent extends HTMLElement {
                               </style>
                               <h4 class="pet-name">${this.name}</h4>` 
   }
+}
 ```
 
 Med mode open läcker inte css in i komponenten men följande är möjligt;  
@@ -134,6 +135,7 @@ export default class CarComponent extends HTMLElement {
                               </style>
                               <div class="car-card"><h1>${this.b}</h1><p>${this.m}</p></div>`
   }
+}
 ```
 
 Med closed mode läcker ingen css eller javascript.
