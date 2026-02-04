@@ -29,6 +29,8 @@ export default class SingleProduct extends HTMLElement {
     }
 
     // with template
+    // Uncomment this version and comment out the one below
+    /**
     connectedCallback() {
         const productTemplate = document.getElementById('product-template')
         const clone = productTemplate.content.cloneNode('true')
@@ -42,10 +44,9 @@ export default class SingleProduct extends HTMLElement {
         })
         this.shadowRoot.appendChild(clone)
     }
-
+    **/
+    
     // with shadowRoot
-    /*
-    // connect component
     connectedCallback() {
 
         // shadowRoot:
@@ -81,5 +82,5 @@ export default class SingleProduct extends HTMLElement {
             console.log('clicked')
         });
     }
-    **/
+    
 }
